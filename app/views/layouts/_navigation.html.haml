@@ -1,12 +1,17 @@
--# navigation styled for Bootstrap 3.0
-%nav.navbar.navbar-default.navbar-fixed-top.navbar-inverse
-  .container
+%nav.navbar.navbar-default.navbar-inverse
+  .container-fluid
+    / Brand and toggle get grouped for better mobile display
     .navbar-header
-      %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+      %button.navbar-toggle.collapsed{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
         %span.sr-only Toggle navigation
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-    .collapse.navbar-collapse
-      %ul.nav.navbar-nav
-        = render 'layouts/navigation_links'
+      %a.navbar-brand{:href => "#"} Sigma Eta Pi
+    / Collect the nav links, forms, and other content for toggling
+    -if current_user
+      #bs-example-navbar-collapse-1.collapse.navbar-collapse
+        %ul.nav.navbar-nav.navbar-right
+          %li= link_to "Sign out", destroy_user_session_path, :method => :delete
+    / /.navbar-collapse
+  / /.container-fluid

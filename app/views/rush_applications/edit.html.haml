@@ -1,0 +1,20 @@
+= simple_form_for(@application, :url => rush_application_path(@application)) do |f|
+  = f.input :name
+  = f.input :email
+  = f.input :phone_number
+  = f.input :year
+  = f.input :major
+  = f.input :extracurriculars, as: :text, label: "1. What are your other commitments this semester? (List your classes, work and other extracurriculars along with the number of hours of commitment.)"
+  = f.input :hobbies, as: :text, label: "2. What are your hobbies? (100 words or less)"
+  = f.input :why_sep, as: :text, label: "3. Why do you want to be a part of SEP and what do you hope to accomplish during your time as a brother? (200 words or less)"
+  %p Please answer any 2 of the 3 prompts below. (200 words or less each)
+  = f.input :short_answer1, required: false, as: :text, label: "1. What is your passion, and how does your passion drive you?"
+  = f.input :short_answer2, required: false, as: :text, label: "2. Identify one problem or inefficiency that can successfully be addressed by entrepreneurial action. Specify actionable items that can be applied to the situation. There is no need to constrain yourself to business-related industries — choose a topic in which you have authentic passion."
+  = f.input :short_answer3, required: false, as: :text, label: "3. Identify a startup that inspires you. Analyze their business model and target market."
+  = f.input :picture, as: :file, label: "Please upload a picture of yourself, to help us identify you."
+  = f.input :resume, as: :file, label: "Please upload your updated resume."
+  = f.input :availabilities, as: :check_boxes, label: "If you are selected for a personal interview, please select the times that you are available.", collection: [['Sat (9/6) Morning', 'Sat Morning'],['Sat (9/6) Early Afternoon', 'Sat Early Afternoon'],['Sat (9/6) Late Afternoon', 'Sat Late Afternoon'],['Sun (9/7) Morning', 'Sun Morning'],['Sun (9/7) Early Afternoon', 'Sun Early Afternoon'],['Sun (9/7) Late Afternoon', 'Sun Late Aftenoon']]
+  = f.input :reference, :as => :select, label: "How did you hear about us?" do                                                                                                                                  |
+    f.select :reference, [['Classroom Announcement', 'classroom_announcement'], ['Flyer', 'flyer'], ['Table on Sproul', 'table'], ['Classroom Chalking', 'chalking'], ['Friend', 'friend'], ['Other', 'other']] |
+    end                                                                                                                                                                                                         |
+  = f.button :submit, 'Submit'
