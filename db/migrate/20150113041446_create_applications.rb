@@ -25,6 +25,8 @@ class CreateApplications < ActiveRecord::Migration
 
       t.text :availabilities
 
+      t.boolean :submitted, default: false
+
       t.timestamps
     end
   end

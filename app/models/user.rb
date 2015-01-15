@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   has_one :application
 
   after_create do |record|
-    Application.create(:user_id => record.id)
+    Application.create(:user_id => record.id, :name => record.name, :email => record.email)
   end
 
 end

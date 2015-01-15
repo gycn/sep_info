@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20150113041446) do
     t.integer  "resume_file_size"
     t.datetime "resume_updated_at"
     t.text     "availabilities"
+    t.boolean  "submitted"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
