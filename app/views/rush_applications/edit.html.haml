@@ -8,7 +8,7 @@
       Not submitted
 
 %hr
-= simple_form_for(@application, :url => rush_application_path(@application), :remote => true) do |f|
+= simple_form_for(@application, :url => rush_application_path(@application)) do |f|
   .row
     .col-xs-12
       %h3
@@ -62,5 +62,7 @@
       = f.input :reference, :as => :select, label: "How did you hear about us?" do                                                                                                                                  |
         f.select :reference, [['Classroom Announcement', 'classroom_announcement'], ['Flyer', 'flyer'], ['Table on Sproul', 'table'], ['Classroom Chalking', 'chalking'], ['Friend', 'friend'], ['Other', 'other']] |
         end                                                                                                                                                                                                         |
-  = f.button :submit, 'Save'
-  = f.button :submit, 'Submit Application'
+  = f.button  :submit , name: "subaction",value: "Save"
+
+  = f.button :submit, :name => 'subaction', value: 'Submit'
+
