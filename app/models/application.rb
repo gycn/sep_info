@@ -10,20 +10,22 @@ class Application < ActiveRecord::Base
   serialize :availabilities
    has_attached_file :picture,
      :storage => :s3,
-     :bucket => 'eta-application-pictures',
+     :bucket => 'theta-application-pictures',
      :s3_credentials => {
        :access_key_id => 'AKIAIU3E3KVTSWAVBOCA',
        :secret_access_key => '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'
-
      }
    has_attached_file :resume,
      :storage => :s3,
-     :bucket => 'eta-application-resumes',
+     :bucket => 'theta-application-resumes',
      :s3_credentials => {
        :access_key_id => 'AKIAIU3E3KVTSWAVBOCA',
        :secret_access_key =>'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'
      }
 
+     validates_attachment :resume, content_type: { content_type: ["application/pdf"] }
+
+     validates_attachment :picture, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
      belongs_to :user
 
 #   validates :name, :email, :phone_number, :year, :major, :picture, :resume, :extracurriculars, :hobbies, :why_sep, :reference,  presence: true
