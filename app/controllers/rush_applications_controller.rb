@@ -1,4 +1,8 @@
 class RushApplicationsController < ApplicationController
+
+  def index
+    @applications = Application.where(:submitted => true)
+  end
   def new
     @application = Application.new
   end

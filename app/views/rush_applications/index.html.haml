@@ -1,0 +1,12 @@
+.container
+  .row
+    %h3 Applicants
+    .column
+      %table.table
+        %tbody
+          - @applications.each do |app|
+            %tr
+              %td.applicant_name
+                =link_to app.name, rush_application_path(app)
+
+

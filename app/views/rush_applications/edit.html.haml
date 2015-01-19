@@ -23,7 +23,7 @@
       .col-md-5
         = f.input :year
         = f.input :major
-        =@application.picture.public_url
+        =#@application.picture.public_url
         = f.input :resume, as: :file, label: "Please upload your updated resume."
     %hr
     .row

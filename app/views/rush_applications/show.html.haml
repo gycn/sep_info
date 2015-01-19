@@ -1,1 +1,89 @@
-%h1= @application.user_id
+%h4
+  = link_to "Back", rush_applications_path
+%h2
+  =@application.name
+%hr
+  .row
+    .col-xs-12
+      %h3
+        Personal Information
+      %br
+  .row
+    .col-md-5
+      %p 
+        %strong
+          Email:
+      %p= @application.email
+
+      %p 
+        %strong
+          Phone:
+      %p= @application.phone_number
+    .col-md-5
+      %p 
+        %strong
+          Year & Major:
+      = @application.year
+      = @application.major
+  %hr
+  .row
+    .col-xs-12
+      %h3
+        Detailed Personal Information
+      %br
+  .row
+    .col-md-5
+      %p
+        %strong
+          What are your other commitments this semester? (List your classes, work and other extracurriculars along with the number of hours of commitment.)
+      %p
+        =@application.extracurriculars
+        
+      %p
+        %strong
+          What are your hobbies? (100 words or less)
+
+      %p
+        =@application.hobbies
+    .col-md-5
+      %p
+        %strong
+          Why do you want to be a part of SEP and what do you hope to accomplish during your time as a brother? (200 words or less)
+      %p
+        =@application.why_sep
+  %hr
+  .row
+    .col-xs-12
+      %h3
+        Short Answer
+  %br
+  .row
+    .col-md-5
+      %p
+        %strong
+          What is your passion, and how does your passion drive you?
+      %p
+        =@application.short_answer1
+      %p
+        %strong
+          Identify one problem or inefficiency that can successfully be addressed by entrepreneurial action. Specify actionable items that can be applied to the situation. There is no need to constrain yourself to business-related industries — choose a topic in which you have authentic passion.
+      %p
+        =@application.short_answer2
+    .col-md-5
+      %p
+        %strong
+          Identify a startup that inspires you. Analyze their business model and target market."
+      %p
+        =@application.short_answer3
+    %hr
+  .row
+    .col-xs-12
+      %h3
+        Miscellaneous
+    %br
+  .row
+    .col-md-5
+
+%h4
+  = link_to "Back", rush_applications_path
+
