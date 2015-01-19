@@ -11,6 +11,7 @@ class Application < ActiveRecord::Base
    has_attached_file :picture,
      :storage => :s3,
      :bucket => 'theta-application-pictures',
+     :s3_host_name => 's3-us-west-2.amazonaws.com',
      :s3_credentials => {
        :access_key_id => 'AKIAIU3E3KVTSWAVBOCA',
        :secret_access_key => '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'
@@ -18,6 +19,7 @@ class Application < ActiveRecord::Base
    has_attached_file :resume,
      :storage => :s3,
      :bucket => 'theta-application-resumes',
+     :s3_host_name => 's3-us-west-2.amazonaws.com',
      :s3_credentials => {
        :access_key_id => 'AKIAIU3E3KVTSWAVBOCA',
        :secret_access_key =>'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'

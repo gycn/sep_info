@@ -1,6 +1,9 @@
 class RushApplicationsController < ApplicationController
 
   def index
+    if !current_user.admin?
+      redirect_to authenticated_root_path
+    end
     @applications = Application.where(:submitted => true)
   end
   def new
@@ -8,7 +11,7 @@ class RushApplicationsController < ApplicationController
   end
 
   def show
-    @application = Application.find_by user_id: current_user.id
+    @application = Application.find_by user_id: params[:id]
   end
 
   def update
@@ -27,6 +30,9 @@ class RushApplicationsController < ApplicationController
   end
 
   def edit
+    if current_user.admin?
+      redirect_to rush_applications_path
+    end
     @application = Application.find_by user_id: current_user.id
   end
     private

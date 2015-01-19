@@ -23,8 +23,12 @@
       .col-md-5
         = f.input :year
         = f.input :major
-        =#@application.picture.public_url
-        = f.input :resume, as: :file, label: "Please upload your updated resume."
+        -if @application.picture.exists?
+          %p
+            = link_to "Your Uploaded Picture", @application.picture.url
+        -if @application.resume.exists?
+          %p
+            = link_to "Your Uploaded Resume", @application.resume.url
     %hr
     .row
       .col-xs-12
@@ -59,13 +63,7 @@
     %br
     .row
       .col-md-5
-        = f.input :availabilities, as: :check_boxes, label: "If you are selected for a personal interview, please select the times that you are available.", collection: [['Sat (9/6) Morning', 'Sat Morning'],['Sat (9/6) Early Afternoon', 'Sat Early Afternoon'],['Sat (9/6) Late Afternoon', 'Sat Late Afternoon'],['Sun (9/7) Morning', 'Sun Morning'],['Sun (9/7) Early Afternoon', 'Sun Early Afternoon'],['Sun (9/7) Late Afternoon', 'Sun Late Aftenoon']]
-        = f.input :reference, :as => :select, label: "How did you hear about us?" do                                                                                                                                  |
-          f.select :reference, [['Classroom Announcement', 'classroom_announcement'], ['Flyer', 'flyer'], ['Table on Sproul', 'table'], ['Classroom Chalking', 'chalking'], ['Friend', 'friend'], ['Other', 'other']] |
-          end                                                                                                                                                                                                         |
-    = f.button  :submit , name: "subaction",value: "Save"
-  
-    = f.button :submit, :name => 'subaction', value: 'Submit'
+        = f.input :availabilities, as: :check_boxes, label: "If you are selected for a personal interview, please select the times that you are available.", collection: [['Sat (1/31) Morning', 'Sat Morning'],['Sat (1/31) Early Afternoon', 'Sat Early Afternoon'],['Sat (1/31) Late Afternoon', 'Sat Late Afternoon'],['Sun (2/1) Morning', 'Sun Morning'],['Sun (2/1) Early Afternoon', 'Sun Early Afternoon'],['Sun (2/1) Late Afternoon', 'Sun Late Aftenoon']]
 -else
   = simple_form_for(@application, :url => rush_application_path(@application)) do |f|
     .row
@@ -81,8 +79,16 @@
       .col-md-5
         = f.input :year
         = f.input :major
-        = f.input :picture, as: :file, label: "Please upload a picture of yourself, to help us identify you."
-        = f.input :resume, as: :file, label: "Please upload your updated resume."
+        -if @application.picture.exists?
+          %p
+            = link_to "Your Uploaded Picture", @application.picture.url
+        -else
+          = f.input :picture, as: :file, label: "Please upload a picture of yourself, to help us identify you." 
+        -if @application.resume.exists?
+          %p
+            = link_to "Your Uploaded Resume", @application.resume.url
+        -else
+          = f.input :resume, as: :file, label: "Please upload your updated resume."
     %hr
     .row
       .col-xs-12
@@ -117,7 +123,7 @@
     %br
     .row
       .col-md-5
-        = f.input :availabilities, as: :check_boxes, label: "If you are selected for a personal interview, please select the times that you are available.", collection: [['Sat (9/6) Morning', 'Sat Morning'],['Sat (9/6) Early Afternoon', 'Sat Early Afternoon'],['Sat (9/6) Late Afternoon', 'Sat Late Afternoon'],['Sun (9/7) Morning', 'Sun Morning'],['Sun (9/7) Early Afternoon', 'Sun Early Afternoon'],['Sun (9/7) Late Afternoon', 'Sun Late Aftenoon']]
+        = f.input :availabilities, as: :check_boxes, label: "If you are selected for a personal interview, please select the times that you are available.", collection: [['Sat (1/31) Morning', 'Sat Morning'],['Sat (1/31) Early Afternoon', 'Sat Early Afternoon'],['Sat (1/31) Late Afternoon', 'Sat Late Afternoon'],['Sun (2/1) Morning', 'Sun Morning'],['Sun (2/1) Early Afternoon', 'Sun Early Afternoon'],['Sun (2/1) Late Afternoon', 'Sun Late Aftenoon']]
         = f.input :reference, :as => :select, label: "How did you hear about us?" do                                                                                                                                  |
           f.select :reference, [['Classroom Announcement', 'classroom_announcement'], ['Flyer', 'flyer'], ['Table on Sproul', 'table'], ['Classroom Chalking', 'chalking'], ['Friend', 'friend'], ['Other', 'other']] |
           end                                                                                                                                                                                                         |

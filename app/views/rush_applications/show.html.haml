@@ -25,6 +25,16 @@
           Year & Major:
       = @application.year
       = @application.major
+      -if @application.picture.exists?
+        %p
+          = link_to "Uploaded Picture", @application.picture.url
+      -else
+        No picture uploaded.
+      -if @application.resume.exists?
+        %p
+          = link_to "Uploaded Resume", @application.resume.url
+      -else
+        No resume uploaded.
   %hr
   .row
     .col-xs-12

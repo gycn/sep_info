@@ -9,4 +9,8 @@ class User < ActiveRecord::Base
     Application.create(:user_id => record.id, :name => record.name, :email => record.email)
   end
 
+  def is_admin?
+    self.admin == 1
+  end
+
 end
