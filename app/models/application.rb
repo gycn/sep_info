@@ -13,16 +13,16 @@ class Application < ActiveRecord::Base
      :bucket => 'theta-application-pictures',
      :s3_host_name => 's3-us-west-2.amazonaws.com',
      :s3_credentials => {
-       :access_key_id => 'AKIAIU3E3KVTSWAVBOCA',
-       :secret_access_key => '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'
+       :access_key_id => 'AKIAIVCEK3GCSMVQAFOQ',
+       :secret_access_key => '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'
      }
    has_attached_file :resume,
      :storage => :s3,
      :bucket => 'theta-application-resumes',
      :s3_host_name => 's3-us-west-2.amazonaws.com',
      :s3_credentials => {
-       :access_key_id => 'AKIAIU3E3KVTSWAVBOCA',
-       :secret_access_key =>'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'
+       :access_key_id => 'AKIAIVCEK3GCSMVQAFOQ',
+       :secret_access_key => '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'
      }
 
      validates_attachment :resume, content_type: { content_type: ["application/pdf"] }
