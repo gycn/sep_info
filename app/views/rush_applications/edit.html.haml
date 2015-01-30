@@ -65,7 +65,7 @@
       .col-md-5
         = f.input :availabilities, as: :check_boxes, label: "If you are selected for a personal interview, please select the times that you are available.", collection: [['Sat (1/31) Morning', 'Sat Morning'],['Sat (1/31) Early Afternoon', 'Sat Early Afternoon'],['Sat (1/31) Late Afternoon', 'Sat Late Afternoon'],['Sun (2/1) Morning', 'Sun Morning'],['Sun (2/1) Early Afternoon', 'Sun Early Afternoon'],['Sun (2/1) Late Afternoon', 'Sun Late Aftenoon']]
 -else
-  = simple_form_for(@application, :url => rush_application_path(@application),html: {:onsubmit => "if(!confirm('Once you submit, you will not be able to edit your application.')){return false;}"}) do |f|
+  = simple_form_for(@application, :url => rush_application_path(@application)) do |f|
     .row
       .col-xs-12
         %h3
@@ -129,6 +129,6 @@
           end                                                                                                                                                                                                         |
     = f.button  :submit , name: "subaction",value: "Save", class: 'btn-info'
   
-    = f.button :submit, :name => 'subaction', value: 'Submit', class: 'btn-success'
+    = f.button :submit, :name => 'subaction', value: 'Submit', class: 'btn-success', onclick:"return confirm('Once you submit, you will be unable to edit your application.')"
 
 
