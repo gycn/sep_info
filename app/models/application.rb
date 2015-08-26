@@ -8,7 +8,6 @@ class Application < ActiveRecord::Base
     return false
   end
 
-
   has_attached_file :picture,
      :storage => :s3,
      :bucket => 'iota-application-pictures',
@@ -25,7 +24,6 @@ class Application < ActiveRecord::Base
        :access_key_id => 'AKIAIVCEK3GCSMVQAFOQ',
        :secret_access_key => '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'
      }
-
 
      validates_attachment :resume, content_type: { content_type: ["application/pdf"] }
 
