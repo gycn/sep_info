@@ -38,28 +38,28 @@
     .row
       .col-md-5
         = f.input :extracurriculars, as: :text, label: "What are your other commitments this semester? (List your classes, work and other extracurriculars along with the number of hours of commitment.)"
-        = f.input :hobbies, as: :text, label: "2. What are your hobbies? (100 words or less)"
+        = f.input :hobbies, as: :text, label: "2. What are your hobbies?"
       .col-md-5
-        = f.input :why_sep, as: :text, label: "3. Why do you want to be a part of SEP and what do you hope to accomplish during your time as a brother? (200 words or less)"
-    %hr
-    .row
-      .col-xs-12
-        %h3
-          Short Answer
-        %small
-          Please answer any 2 of the 3 prompts below. (200 words or less each)
-    %br
-    .row
-      .col-md-5
-        = f.input :short_answer1, required: false, as: :text, label: "1. What is your passion, and how does your passion drive you?"
-        = f.input :short_answer2, required: false, as: :text, label: "2. Identify one problem or inefficiency that can successfully be addressed by entrepreneurial action. Specify actionable items that can be applied to the situation. There is no need to constrain yourself to business-related industries — choose a topic in which you have authentic passion."
-      .col-md-5
-        = f.input :short_answer3, required: false, as: :text, label: "3. Identify a startup that inspires you. Analyze their business model and target market."
-    %hr
-    .row
-      .col-xs-12
-        %h3
-          Miscellaneous
+        = f.input :why_sep, as: :text, label: "3. Why do you want to be a part of SEP? (200 words or less)"
+    -#%hr
+    -#.row
+      -#.col-xs-12
+        -#%h3
+          -#Short Answer
+        -#%small
+          -#Please answer any 2 of the 3 prompts below. (200 words or less each)
+    -#%br
+    -#.row
+      -#.col-md-5
+        -#= f.input :short_answer1, required: false, as: :text, label: "1. What is your passion, and how does your passion drive you?"
+        -#= f.input :short_answer2, required: false, as: :text, label: "2. Identify one problem or inefficiency that can successfully be addressed by entrepreneurial action. Specify actionable items that can be applied to the situation. There is no need to constrain yourself to business-related industries — choose a topic in which you have authentic passion."
+      -#.col-md-5
+        -#= f.input :short_answer3, required: false, as: :text, label: "3. Identify a startup that inspires you. Analyze their business model and target market."
+    -#%hr
+    -#.row
+      -#.col-xs-12
+        -#%h3
+          -#Miscellaneous
 -else
   = simple_form_for(@application, :url => rush_application_path(@application)) do |f|
     .row
