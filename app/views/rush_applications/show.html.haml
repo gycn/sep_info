@@ -51,48 +51,48 @@
         
       %p
         %strong
-          What are your hobbies? (100 words or less)
+          What are your hobbies?
 
       %p
         =@application.hobbies
     .col-md-5
       %p
         %strong
-          Why do you want to be a part of SEP and what do you hope to accomplish during your time as a brother? (200 words or less)
+          Why do you want to be a part of SEP? (200 words or less)
       %p
         =@application.why_sep
-  %hr
-  .row
-    .col-xs-12
-      %h3
-        Short Answer
-  %br
-  .row
-    .col-md-5
-      %p
-        %strong
-          What is your passion, and how does your passion drive you?
-      %p
-        =@application.short_answer1
-      %p
-        %strong
-          Identify one problem or inefficiency that can successfully be addressed by entrepreneurial action. Specify actionable items that can be applied to the situation. There is no need to constrain yourself to business-related industries — choose a topic in which you have authentic passion.
-      %p
-        =@application.short_answer2
-    .col-md-5
-      %p
-        %strong
-          Identify a startup that inspires you. Analyze their business model and target market.
-      %p
-        =@application.short_answer3
-    %hr
-  .row
-    .col-xs-12
-      %h3
-        Miscellaneous
-    %br
-  .row
-    .col-md-5
+  -#%hr
+  -#.row
+    -#.col-xs-12
+      -#%h3
+        -#Short Answer
+  -#%br
+  -#.row
+    -#.col-md-5
+      -#%p
+        -#%strong
+          -#What is your passion, and how does your passion drive you?
+      -#%p
+        -#=@application.short_answer1
+      -#%p
+        -#%strong
+          -#Identify one problem or inefficiency that can successfully be addressed by entrepreneurial action. Specify actionable items that can be applied to the situation. There is no need to constrain yourself to business-related industries — choose a topic in which you have authentic passion.
+      -#%p
+        -#=@application.short_answer2
+    -#.col-md-5
+      -#%p
+        -#%strong
+          -#Identify a startup that inspires you. Analyze their business model and target market.
+      -#%p
+        -#=@application.short_answer3
+    -#%hr
+  -#.row
+    -#.col-xs-12
+      -#%h3
+        -#Miscellaneous
+    -#%br
+  -#.row
+    -#.col-md-5
 
 %h4
   = link_to "Back", rush_applications_path
