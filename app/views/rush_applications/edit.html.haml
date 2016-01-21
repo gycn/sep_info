@@ -69,22 +69,22 @@
     %br
     .row
       .col-md-5
-        = f.input :name
-        = f.input :email
-        = f.input :phone_number
+        = f.input :name, required: true
+        = f.input :email, required: true
+        = f.input :phone_number, required: true
       .col-md-5
-        = f.input :year
-        = f.input :major
+        = f.input :year, required: true
+        = f.input :major, required: true
         -if @application.picture.exists?
           %p
             = link_to "Your Uploaded Picture", @application.picture.url
         -else
-          = f.input :picture, as: :file, label: "Please upload a picture of yourself, to help us identify you." 
+          = f.input :picture, as: :file, label: "Please upload a picture of yourself, to help us identify you.", required: true
         -if @application.resume.exists?
           %p
             = link_to "Your Uploaded Resume", @application.resume.url
         -else
-          = f.input :resume, as: :file, label: "Please upload your updated resume. (PDF)"
+          = f.input :resume, as: :file, label: "Please upload your updated resume. (PDF)", required: true
     %hr
     .row
       .col-xs-12
@@ -122,6 +122,8 @@
         = f.input :reference, :as => :select, label: "How did you hear about us? " do                                                                                                                                  |
           f.select :reference, [['Classroom Announcement', 'classroom_announcement'], ['Flyer', 'flyer'], ['Table on Sproul', 'table'], ['Classroom Chalking', 'chalking'], ['Friend', 'friend'], ['Other', 'other']] |
           end                                                                                                                                                                                                         |
-    = f.button  :submit , name: "subaction",value: "Save", class: 'btn-info'
+    = f.button  :submit , name: "subaction",value: "Save", class: 'btn-info cancel'
   
     = f.button :submit, :name => 'subaction', value: 'Submit', class: 'btn-success', onclick:"return confirm('Once you submit, you will be unable to edit your application.')"
+:javascript
+  $("#edit_application_3").validate();
