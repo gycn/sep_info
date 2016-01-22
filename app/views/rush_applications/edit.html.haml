@@ -120,7 +120,7 @@
     .row
       .col-md-5
         = f.input :reference, :as => :select, label: "How did you hear about us? " do                                                                                                                                  |
-          f.select :reference, [['Classroom Announcement', 'classroom_announcement'], ['Flyer', 'flyer'], ['Table on Sproul', 'table'], ['Classroom Chalking', 'chalking'], ['Friend', 'friend'], ['Other', 'other']] |
+          f.select :reference, [['Classroom Announcement', 'classroom_announcement'], ['Flyer', 'flyer'], ['Table on Sproul', 'table'], ['Facebook', 'facebook'], ['Friend', 'friend'], ['Other', 'other']] |
           end                                                                                                                                                                                                         |
     = f.button  :submit , name: "subaction",value: "Save", class: 'btn-info cancel'
   
