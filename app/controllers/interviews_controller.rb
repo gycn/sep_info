@@ -8,7 +8,7 @@ class InterviewsController < ApplicationController
   # GET /interviews
   # GET /interviews.json
   def index
-    redirect_to action: "new"
+    @apps = Application.order(:name).all
   end
   
   # GET /interviews/new

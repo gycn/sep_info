@@ -1,9 +1,27 @@
-%h1 Listing coffee_chats
-      
 .container
-  - @coffee_chats.each do |coffee_chat|
-    = render coffee_chat
-
+  %h1 Coffee Chats
 %br
-
-= link_to 'New Coffee chat', new_coffee_chat_path
+.container
+  %table{:class => "table"}
+    %tr
+      %th Rushee
+      %th Interviewer 1
+      %th Interviewer 2
+      %th Overall Score
+      %th Empathy Score
+      %th Grit Score
+      %th Curiosity Score
+      %th Analytical Score
+      %th Comments
+    - @apps.each do |app|
+      - app.coffee_chats.each do |coffee_chat|
+        %tr
+          %td= app.name
+          %td= coffee_chat.interviewer_1
+          %td= coffee_chat.interviewer_2
+          %td= coffee_chat.overall
+          %td= coffee_chat.empathy
+          %td= coffee_chat.grit
+          %td= coffee_chat.curiosity
+          %td= coffee_chat.analytical
+          %td= coffee_chat.comments

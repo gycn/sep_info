@@ -1,10 +1,35 @@
-%h1 Listing interviews
-
 .container
-  - @interviews.each do |interview|
-    = render interview
-        
-
+  %h1 Listing interviews
 %br
+.container
+  %table{:class => "table"}
+    %tr
+      %th Rushee
+      %th Interviewer 1
+      %th Score 1
+      %th Comments 1
 
-= link_to 'New Interview', new_interview_path
+      %th Interviewer 2
+      %th Score 2
+      %th Comments 2
+
+      %th Interviewer 3
+      %th Score 3
+      %th Comments 3
+    - @apps.each do |app|
+      - app.interviews.each do |interview|
+        %tr
+          %td= app.name
+          %td= interview.interviewer_1
+          %td= interview.score_1
+          %td= interview.notes_1
+
+          %td= interview.interviewer_2
+          %td= interview.score_2
+          %td= interview.notes_2
+
+          %td= interview.interviewer_3
+          %td= interview.score_3
+          %td= interview.notes_3
+
+

@@ -77,8 +77,15 @@
 %h3 Group Interview
 %br
 .container.interview_container#group_interviews
-  - @application.group_interviews.each do |group_interview|
-    = render group_interview
+  %table{:class => "table"}
+    %tr
+      %th Brother
+      %th Score
+      %th Comments
+      - @application.group_interviews.each do |group_interview|
+        %tr
+          = render group_interview
+        
   -#%hr
   -#.row
     -#.col-xs-12

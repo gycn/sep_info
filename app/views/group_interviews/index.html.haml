@@ -1,8 +1,15 @@
-%h1 Listing group_interviews
 .container
-  - @group_interviews.each do |group_interview|
-    = render group_interview
-
+  %h1 Group Interviews
 %br
-
-= link_to 'New Group interview', new_group_interview_path
+.container
+  %table{:class => "table"}
+    %tr
+      %th Rushee
+      %th Brother
+      %th Score
+      %th Comments
+      - @apps.each do |app|
+        -app.group_interviews.each do |gp|
+          %tr
+            %td= app.name
+            = render gp  

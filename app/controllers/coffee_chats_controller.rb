@@ -8,7 +8,7 @@ class CoffeeChatsController < ApplicationController
   # GET /coffee_chats
   # GET /coffee_chats.json
   def index
-    redirect_to action: "new"
+    @apps = Application.order(:name).all
   end
 
   # GET /coffee_chats/new

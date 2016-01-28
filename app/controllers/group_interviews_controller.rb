@@ -8,7 +8,7 @@ class GroupInterviewsController < ApplicationController
   # GET /group_interviews
   # GET /group_interviews.json
   def index
-    redirect_to action: "new"
+    @apps = Application.order(:name).all
   end
   
   # GET /group_interviews/new
