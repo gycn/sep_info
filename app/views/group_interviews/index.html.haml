@@ -1,0 +1,8 @@
+%h1 Listing group_interviews
+.container
+  - @group_interviews.each do |group_interview|
+    = render group_interview
+
+%br
+
+= link_to 'New Group interview', new_group_interview_path

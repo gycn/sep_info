@@ -7,7 +7,14 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      %a.navbar-brand{:href => "/"} Sigma Eta Pi
+        
+      -if current_user && current_user.admin?
+        %a.navbar-brand{:href => "/"} Applications
+        %a.navbar-brand{:href => "/interviews/new"} Add Interview
+        %a.navbar-brand{:href => "/coffee_chats/new"} Add Coffee Chat
+        %a.navbar-brand{:href => "/group_interviews/new"} Add Group Interview
+      -else
+        %a.navbar-brand{:href => "/"} Sigma Eta Pi
     / Collect the nav links, forms, and other content for toggling
     -if current_user
       #bs-example-navbar-collapse-1.collapse.navbar-collapse

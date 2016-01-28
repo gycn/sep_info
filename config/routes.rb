@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :group_interviews
+
+  resources :coffee_chats
+
+  resources :interviews
+
   devise_for :users
   resources :users
   resources :rush_applications

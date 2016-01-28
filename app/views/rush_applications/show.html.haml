@@ -61,6 +61,24 @@
           Why do you want to be a part of SEP? (200 words or less)
       %p
         =@application.why_sep
+%hr
+%h3 Interview
+%br
+.container.interview_container#interview
+  - @application.interviews.each do |interview|
+    = render interview
+%hr
+%h3 Coffee Chat
+%br
+.container.interview_container#coffee_chat
+  - @application.coffee_chats.each do |coffee_chat|
+    = render coffee_chat
+%hr
+%h3 Group Interview
+%br
+.container.interview_container#group_interviews
+  - @application.group_interviews.each do |group_interview|
+    = render group_interview
   -#%hr
   -#.row
     -#.col-xs-12

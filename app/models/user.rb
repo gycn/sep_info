@@ -10,7 +10,11 @@ class User < ActiveRecord::Base
   end
 
   def is_admin?
-    self.admin == 1
+    self.admin == true
+  end
+
+  def is_brother?
+    self.brother == true
   end
 
 end

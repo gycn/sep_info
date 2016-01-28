@@ -1,0 +1,10 @@
+%h1 Listing interviews
+
+.container
+  - @interviews.each do |interview|
+    = render interview
+        
+
+%br
+
+= link_to 'New Interview', new_interview_path

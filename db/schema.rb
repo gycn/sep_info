@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150119213821) do
+ActiveRecord::Schema.define(version: 20160128184250) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,44 @@ ActiveRecord::Schema.define(version: 20150119213821) do
     t.datetime "updated_at"
   end
 
+  create_table "coffee_chats", force: true do |t|
+    t.string   "interviewer_1"
+    t.string   "interviewer_2"
+    t.integer  "overall"
+    t.integer  "empathy"
+    t.integer  "grit"
+    t.integer  "curiosity"
+    t.integer  "analytical"
+    t.text     "comments"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "application_id"
+  end
+
+  create_table "group_interviews", force: true do |t|
+    t.string   "author"
+    t.integer  "score"
+    t.text     "comments"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "application_id"
+  end
+
+  create_table "interviews", force: true do |t|
+    t.string   "interviewer_1"
+    t.decimal  "score_1"
+    t.text     "notes_1"
+    t.string   "interviewer_2"
+    t.decimal  "score_2"
+    t.text     "notes_2"
+    t.string   "interviewer_3"
+    t.decimal  "score_3"
+    t.text     "notes_3"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "application_id"
+  end
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
@@ -60,6 +98,7 @@ ActiveRecord::Schema.define(version: 20150119213821) do
     t.datetime "updated_at"
     t.string   "name"
     t.boolean  "admin",                  default: false
+    t.boolean  "brother"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

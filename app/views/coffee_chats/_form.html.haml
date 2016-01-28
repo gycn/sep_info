@@ -1,0 +1,21 @@
+.container
+  %h2 Coffee Chat Form
+%br
+.container
+  = simple_form_for(@coffee_chat, :html => { id: "coffee_chat_form" }) do |f|
+    = f.error_notification
+
+    %b Interviewee:
+    = f.select :application_id, @user_list, {}, {:class => "form-control"}
+    %br
+    = f.input :interviewer_1, required: true
+    = f.input :interviewer_2, required: true
+    = f.input :overall, :label => "Overall Score", required: true
+    = f.input :empathy, :label => "Empathy Score", required: true
+    = f.input :grit, :label => "Grit Score", required: true
+    = f.input :curiosity, :label => "Curiosity Score", required: true
+    = f.input :analytical, :label => "Analytical Score", required: true
+    = f.input :comments, required: true
+    = f.button :submit, "Submit"
+:javascript
+  $("#coffee_chat_form").validate();

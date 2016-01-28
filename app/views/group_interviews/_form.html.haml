@@ -1,0 +1,15 @@
+.container
+  %h2 Group Interview Form
+%br
+.container
+  = simple_form_for(@group_interview, :html => { id: "group_interview_form"}) do |f|
+    = f.error_notification
+    %b Interviewee:
+    = f.select :application_id, @user_list, {}, {:class => "form-control"}
+    %br
+    = f.input :author, :label => "Your name", required: true
+    = f.input :score, required: true
+    = f.input :comments, required: true
+    = f.button :submit, "Submit"
+:javascript
+  $("#group_interview_form").validate();

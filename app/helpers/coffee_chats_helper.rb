@@ -1,0 +1,2 @@
+module CoffeeChatsHelper
+end

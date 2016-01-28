@@ -1,0 +1,2 @@
+module GroupInterviewsHelper
+end

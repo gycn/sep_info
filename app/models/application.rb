@@ -25,11 +25,13 @@ class Application < ActiveRecord::Base
        :secret_access_key => 'z+C4DZ06uisvfAHaaU+Wa1LNewPrLF8Bo86IbvNe'
      }
 
-     validates_attachment :resume, content_type: { content_type: ["application/pdf"] }
+  validates_attachment :resume, content_type: { content_type: ["application/pdf"] }
 
-     validates_attachment :picture, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
-     belongs_to :user
-
+  validates_attachment :picture, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
+  belongs_to :user
+  has_many :coffee_chats
+  has_many :interviews
+  has_many :group_interviews
     private
 
     def application_params

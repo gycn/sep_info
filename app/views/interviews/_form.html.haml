@@ -1,0 +1,28 @@
+.container
+  %h2 Interview Form
+%br
+.container
+  = simple_form_for(@interview, :html => { id: "interview_form" }) do |f|
+    = f.error_notification
+    %b Interviewee:
+    = f.select :application_id, @user_list, {}, {:class => "form-control"}
+    %br
+    %br
+    %br
+    = f.input :interviewer_1, required: true
+    = f.input :score_1, required: true
+    = f.input :notes_1, required: true
+    %br
+    %br
+    = f.input :interviewer_2, required: true
+    = f.input :score_2, required: true
+    = f.input :notes_2, required: true
+    %br
+    %br
+    = f.input :interviewer_3
+    = f.input :score_3
+    = f.input :notes_3
+
+    = f.button :submit, "Submit"
+:javascript
+  $("#interview_form").validate();
