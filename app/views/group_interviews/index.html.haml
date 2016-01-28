@@ -2,14 +2,15 @@
   %h1 Group Interviews
 %br
 .container
-  %table{:class => "table"}
-    %tr
-      %th Rushee
-      %th Brother
-      %th Score
-      %th Comments
-      - @apps.each do |app|
-        -app.group_interviews.each do |gp|
-          %tr
-            %td= app.name
-            = render gp  
+  .table-responsive
+    %table{:class => "table"}
+      %tr
+        %th Rushee
+        %th Brother
+        %th Score
+        %th Comments
+        - @apps.each do |app|
+          -app.group_interviews.each do |gp|
+            %tr
+              %td= app.name
+              = render gp  

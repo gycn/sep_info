@@ -70,31 +70,34 @@
   %h3 Interview
   %br
   .container.interview_container#interview
-    - @application.interviews.each do |interview|
-      = render interview
+    .table-responsive
+      - @application.interviews.each do |interview|
+        = render interview
 
 .container
   %hr
   %h3 Coffee Chat
   %br
   .container.interview_container#coffee_chat
-    - @application.coffee_chats.each do |coffee_chat|
-      = render coffee_chat
+    .table-responsive
+      - @application.coffee_chats.each do |coffee_chat|
+        = render coffee_chat
 
 .container
   %hr
   %h3 Group Interview
   %br
   .container.interview_container#group_interviews
-    %table{:class => "table"}
-      %tr
-        %th Brother
-        %th Score
-        %th Comments
-        - @application.group_interviews.each do |group_interview|
-          %tr
-            = render group_interview
-          
+    .table-responsive
+      %table{:class => "table"}
+        %tr
+          %th Brother
+          %th Score
+          %th Comments
+          - @application.group_interviews.each do |group_interview|
+            %tr
+              = render group_interview
+            
   -#%hr
   -#.row
     -#.col-xs-12
