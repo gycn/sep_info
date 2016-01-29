@@ -24,3 +24,28 @@ p, b
 {
 	font-size:12pt;
 }
+
+.radio_table
+{
+	width:800px;
+	margin: 0 auto !important;
+  float: none !important;
+
+}
+
+.radio_table td, .radio_table th
+{
+	white-space: nowrap;
+    width: 1%;
+    border-top:none !important;
+}
+
+textarea
+{
+	min-height:150px
+}
+
+label
+{
+	font-size:12pt;
+}

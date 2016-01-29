@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160128184250) do
+ActiveRecord::Schema.define(version: 20160129064812) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,17 +70,28 @@ ActiveRecord::Schema.define(version: 20160128184250) do
 
   create_table "interviews", force: true do |t|
     t.string   "interviewer_1"
-    t.decimal  "score_1"
-    t.text     "notes_1"
     t.string   "interviewer_2"
-    t.decimal  "score_2"
-    t.text     "notes_2"
     t.string   "interviewer_3"
-    t.decimal  "score_3"
-    t.text     "notes_3"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "application_id"
+    t.decimal  "gpa"
+    t.integer  "score_1"
+    t.text     "question_1"
+    t.integer  "score_2"
+    t.text     "question_2"
+    t.integer  "score_3"
+    t.text     "question_3"
+    t.integer  "score_4"
+    t.text     "question_4"
+    t.integer  "score_5"
+    t.text     "question_5"
+    t.integer  "score_6"
+    t.text     "question_6"
+    t.integer  "overall"
+    t.text     "question_7"
+    t.text     "question_8"
+    t.text     "comments"
   end
 
   create_table "users", force: true do |t|

@@ -4,39 +4,92 @@
     %td 
       %p
         %b Interviewer 1
-      %p
-        %b Score
-      %p
-        %b Comments
-    %td
-      %p=interview.interviewer_1
-      %p=interview.score_1
-      %p=interview.notes_1
+    %td 
+      %p= interview.interviewer_1
   %tr
     %td 
       %p
         %b Interviewer 2
-      %p
-        %b Score
-      %p
-        %b Comments
-    %td
-      %p=interview.interviewer_2
-      %p=interview.score_2
-      %p=interview.notes_2
+    %td 
+      %p= interview.interviewer_2
   %tr
     %td 
       %p
         %b Interviewer 3
+    %td 
+      %p= interview.interviewer_3
+  %tr
+    %td 
       %p
-        %b Score
+        %b GPA
+    %td 
+      %p= interview.gpa
+  %tr
+    %td 
       %p
-        %b Comments
-    %td
-      %p=interview.interviewer_3
-      %p=interview.score_3
-      %p=interview.notes_3
-      
+        %b What are three highlights from your resume? 
+    %td 
+      %p= "Score: " + interview.score_1.to_s
+      %p= interview.question_1
+  %tr
+    %td 
+      %p
+        %b Why do you want to join SEP and what are you looking to gain?
+    %td 
+      %p= "Score: " + interview.score_2.to_s
+      %p= interview.question_2
+  %tr
+    %td 
+      %p
+        %b Tell me a skill or idea you have taught yourself in the last six months. How did you go about teaching yourself this new skill or idea, and what was the result? 
+    %td 
+      %p= "Score: " + interview.score_3.to_s
+      %p= interview.question_3
+  %tr
+    %td 
+      %p
+        %b What is the ideal business you would like to be apart of or start? Follow up: Now tell me 3 more in different industries (not specific startups we're looking for industries of interest). 
+    %td 
+      %p= "Score: " + interview.score_4.to_s
+      %p= interview.question_4
+  %tr
+    %td 
+      %p
+        %b Tell me about a startup you find interesting and why? follow-up with: can you think of any concerns with this product/startup?
+    %td 
+      %p= "Score: " + interview.score_5.to_s
+      %p= interview.question_5
+  %tr
+    %td 
+      %p
+        %b Market sizing questions, these could include, find the number of red cups used in 1 day at Berkeley or the number of people in USA who enjoy electronic music? 
+    %td 
+      %p= "Score: " + interview.score_6.to_s
+      %p= interview.question_6
+  %tr
+    %td 
+      %p
+        %b Overall Score
+    %td 
+      %p= interview.overall
+  %tr
+    %td 
+      %p
+        %b What do you know about the pledge process so far?
+    %td 
+      %p= interview.question_7
+  %tr
+    %td 
+      %p
+        %b Do you have any questions for us?
+    %td 
+      %p= interview.question_8
+  %tr
+    %td 
+      %p
+        %b Intangible Additions to Interview
+    %td 
+      %p= interview.comments
 
 
       

@@ -44,6 +44,6 @@ class InterviewsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def interview_params
-      params.require(:interview).permit(:application_id,:interviewer_1,:score_1,:notes_1,:interviewer_2,:score_2,:notes_2,:interviewer_3,:score_3,:notes_3)
+      params.require(:interview).permit(:application_id,:interviewer_1,:interviewer_2,:interviewer_3,:gpa, :score_1 , :question_1, :score_2 , :question_2 , :score_3 , :question_3 , :score_4 , :question_4 , :score_5 , :question_5 , :score_6 , :question_6 , :overall , :question_7 , :question_8 , :comments)
     end
 end
