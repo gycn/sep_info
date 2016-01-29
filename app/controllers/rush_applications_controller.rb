@@ -4,7 +4,7 @@ class RushApplicationsController < ApplicationController
     if !current_user.admin?
       redirect_to authenticated_root_path
     end
-    @applications = Application.where(:submitted => true)
+    @applications = Application.where(:submitted => true).order(:name).all
   end
   def new
     @application = Application.new
