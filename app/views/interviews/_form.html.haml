@@ -64,11 +64,11 @@
     %table{:class => "table radio_table text-center"}
       %tr
         %td
-          Not Accomplished
+          Poor Critical Thinking
         %td
           = f.input :score_5, label: false, as: :radio_buttons, collection: [ 1,2,3,4,5,6,7 ], item_wrapper_class: 'radio-inline', required: true
         %td
-          Highly Accomplished
+          Advanced Critical Thinking
       %tr
     = f.input :question_5, label:false, required: true
     %br
@@ -76,11 +76,11 @@
     %table{:class => "table radio_table text-center"}
       %tr
         %td
-          Not Accomplished
+          Poor Structure and Analysis
         %td
           = f.input :score_6, label: false, as: :radio_buttons, collection: [ 1,2,3,4,5,6,7 ], item_wrapper_class: 'radio-inline', required: true
         %td
-          Highly Accomplished
+          Advanced Structure and Analysis
       %tr
     = f.input :question_6, label:false, required: true
     %br
